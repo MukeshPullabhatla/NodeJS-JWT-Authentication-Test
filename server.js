@@ -52,15 +52,16 @@ app.post('/api/login', (req, res) => {
             });
             break;
         }
-        else {
+    }
+         
             res.status(401).json({
                 success: false,
                 token: null,
                 err: 'Username or password is incorrect'
             });
         
-        }
-    }
+        
+    
 });
 
 app.get('/api/dashboard', jwtMW, (req, res) => {
